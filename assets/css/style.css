@@ -1,0 +1,35 @@
+/********** Global Styling **********/
+
+/* Reset styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: url(../images/background-image.png) center center/cover;
+}
+
+/********** Content Styling **********/
+
+/* Title styling */
+.title-section {
+    flex: 0 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-image {
+    max-height: 80%;
+    user-select: none;
+    pointer-events: none;
+}
