@@ -66,8 +66,17 @@ const asteroidImages = [
   return img;
 });
 
-// Variables for score tracking
+// Variable for score tracking
 let highestScore = 0;
 
 // Game variables
 let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
+
+// Constants
+const gravity = 0.6;
+const lift = -5;
+const obstacleWidth = 50;
+const obstacleSpeed = 3;
+
+// Variable to determine if player is holding mouse button
+let isHolding = false;
