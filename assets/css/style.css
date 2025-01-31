@@ -33,3 +33,11 @@ body {
     user-select: none;
     pointer-events: none;
 }
+
+/* Canvas wrapper styling */
+#canvas-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
