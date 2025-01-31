@@ -219,3 +219,21 @@ function createObstacle() {
     });
   }
 }
+
+// Check if spaceship collides with asteroid or top/bottom of canvas
+function checkCollision() {
+  for (const obstacle of obstacles) {
+    if (
+      spaceship.x < obstacle.x + obstacle.width &&
+      spaceship.x + spaceship.width > obstacle.x &&
+      spaceship.y < obstacle.y + obstacle.height &&
+      spaceship.y + spaceship.height > obstacle.y
+    ) {
+      isGameStarted = false;
+    }
+  }
+
+  if (spaceship.y + spaceship.height > canvas.height / dpr || spaceship.y < 0) {
+    isGameStarted = false;
+  }
+}
