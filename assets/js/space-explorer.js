@@ -122,3 +122,14 @@ canvas.addEventListener('mousedown', () => {
 canvas.addEventListener('mouseup', () => {
   isHolding = false; 
 });
+
+// For mobiles: Start game if not started or raise spaceship
+canvas.addEventListener('touchstart', () => {
+  if (!isGameStarted) {
+    isGameStarted = true;
+    startGame();
+    return
+  }
+  isHolding = true;
+  spaceship.velocityY = lift; 
+});
