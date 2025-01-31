@@ -117,3 +117,8 @@ canvas.addEventListener('mousedown', () => {
     spaceship.velocityY = lift;
   }
 });
+
+// For desktops: Set isHolding to false on mouse release to allow spaceship to drop
+canvas.addEventListener('mouseup', () => {
+  isHolding = false; 
+});
