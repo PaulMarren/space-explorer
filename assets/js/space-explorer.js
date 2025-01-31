@@ -101,3 +101,11 @@ function initializeGame() {
 }
 
 initializeGame();
+
+// Start the game when the canvas is clicked if game is not started
+canvas.addEventListener('click', () => {
+  if (!isGameStarted) {
+    isGameStarted = true;
+    startGame();
+  }
+});
