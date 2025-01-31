@@ -26,3 +26,20 @@ let highestScore = 0;
 
 // Game variables
 let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
+
+// Load the start button image
+const startButtonImg = new Image();
+startButtonImg.src = 'assets/images/start-button.png'
+
+startButtonImg.onload = function () {
+  drawStartButton();
+};
+
+function drawStartButton() {
+  const buttonWidth = 222; 
+  const buttonHeight = 222; 
+  const centerX = (canvas.width / dpr - buttonWidth) / 2; 
+  const centerY = (canvas.height / dpr - buttonHeight) / 2; 
+
+  ctx.drawImage(startButtonImg, centerX, centerY, buttonWidth, buttonHeight);
+}
