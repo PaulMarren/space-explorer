@@ -53,13 +53,13 @@ function drawStartButton() {
 
 // Load the spaceship image
 const spaceshipImg = new Image();
-spaceshipImg.src = 'assets/images/ufo.png';
+spaceshipImg.src = 'assets/images/ufo.webp';
 
 // Load the asteroid images
 const asteroidImages = [
-  'assets/images/asteroid-1.png',
-  'assets/images/asteroid-2.png',
-  'assets/images/asteroid-3.png',
+  'assets/images/asteroid-1.webp',
+  'assets/images/asteroid-2.webp',
+  'assets/images/asteroid-3.webp',
 ].map(src => {
   const img = new Image();
   img.src = src;
