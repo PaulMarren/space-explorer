@@ -169,3 +169,20 @@ function updateSpaceshipPosition() {
 
   spaceship.y += spaceship.velocityY;
 }
+
+function drawSpaceship() {
+  const tiltAngle = isHolding ? -10 : 0; // Tilt upwards when holding
+  const radians = (Math.PI / 180) * tiltAngle; // Convert degrees to radians
+
+  ctx.save(); 
+  ctx.translate(spaceship.x + spaceship.width / 2, spaceship.y + spaceship.height / 2); // Move to spaceship center
+  ctx.rotate(radians); 
+  ctx.drawImage(
+    spaceshipImg,
+    -spaceship.width / 2, 
+    -spaceship.height / 2,
+    spaceship.width,
+    spaceship.height
+  );
+  ctx.restore(); // Restore the canvas state
+}
