@@ -80,3 +80,24 @@ const obstacleSpeed = 3;
 
 // Variable to determine if player is holding mouse button
 let isHolding = false;
+
+// Initalize the game
+function initializeGame() {
+  spaceship = {
+    x: 100,
+    y: 200,
+    width: 60,
+    height: 50,
+    velocityY: 0,
+  };
+  obstacles = [];
+  isGameStarted = false;
+  score = 0;
+  currentAsteroidCount = 1; 
+  difficultyIncreaseTimer = 0; 
+  currentDifficultyLevel = 1;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawStartButton();
+}
+
+initializeGame();
