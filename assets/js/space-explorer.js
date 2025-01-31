@@ -5,21 +5,34 @@ const canvas = document.createElement('canvas');
 // Create 2d context object
 const ctx = canvas.getContext('2d');
 
-// Disable right-click on the canvas
-canvasWrapper.addEventListener('contextmenu', (event) => {
-    event.preventDefault();
-});
-
 // Set canvas dimensions
 const dpr = window.devicePixelRatio || 1;
-canvas.width = canvasWrapper.offsetWidth * dpr;
-canvas.height = canvasWrapper.offsetHeight * dpr;
-canvas.style.width = `${canvasWrapper.offsetWidth}px`;
-canvas.style.height = `${canvasWrapper.offsetHeight}px`;
-ctx.scale(dpr, dpr);
+resizeCanvas();
 
 // Add canvas to canvasWrapper
 canvasWrapper.appendChild(canvas);
+
+// Disable right-click on the canvas
+canvasWrapper.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+});
+
+// Handle window resizing
+window.addEventListener('resize', resizeCanvas);
+
+// Function to resize the canvas
+function resizeCanvas() {
+  canvas.width = canvasWrapper.offsetWidth * dpr;
+  canvas.height = canvasWrapper.offsetHeight * dpr;
+  canvas.style.width = `${canvasWrapper.offsetWidth}px`;
+  canvas.style.height = `${canvasWrapper.offsetHeight}px`;
+  ctx.scale(dpr, dpr);
+
+  // Redraw the start button if the game is not started
+  if (!isGameStarted) {
+    drawStartButton();
+  }
+}
 
 // Variables for score tracking
 let highestScore = 0;
@@ -29,7 +42,7 @@ let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficulty
 
 // Load the start button image
 const startButtonImg = new Image();
-startButtonImg.src = 'assets/images/start-button.png'
+startButtonImg.src = 'assets/images/start-button.webp'
 
 startButtonImg.onload = function () {
   drawStartButton();
