@@ -1,3 +1,37 @@
+// Variable for score tracking
+let highestScore = 0;
+
+// Game variables
+let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
+
+// Constants
+const gravity = 0.6;
+const lift = -5;
+const obstacleWidth = 50;
+const obstacleSpeed = 3;
+
+// Variable to determine if player is holding mouse button
+let isHolding = false;
+
+// Load the start button image
+const startButtonImg = new Image();
+startButtonImg.src = 'assets/images/start-button.webp'
+
+// Load the spaceship image
+const spaceshipImg = new Image();
+spaceshipImg.src = 'assets/images/ufo.webp';
+
+// Load the asteroid images
+const asteroidImages = [
+  'assets/images/asteroid-1.webp',
+  'assets/images/asteroid-2.webp',
+  'assets/images/asteroid-3.webp',
+].map(src => {
+  const img = new Image();
+  img.src = src;
+  return img;
+});
+
 // Select the canvas wrapper
 const canvasWrapper = document.getElementById('canvas-wrapper');
 // Create canvas
@@ -33,10 +67,6 @@ function resizeCanvas() {
   }
 }
 
-// Load the start button image
-const startButtonImg = new Image();
-startButtonImg.src = 'assets/images/start-button.webp'
-
 // Draw the start button once the start button image has loaded
 startButtonImg.onload = function () {
   drawStartButton();
@@ -50,36 +80,6 @@ function drawStartButton() {
 
   ctx.drawImage(startButtonImg, centerX, centerY, buttonWidth, buttonHeight);
 }
-
-// Load the spaceship image
-const spaceshipImg = new Image();
-spaceshipImg.src = 'assets/images/ufo.webp';
-
-// Load the asteroid images
-const asteroidImages = [
-  'assets/images/asteroid-1.webp',
-  'assets/images/asteroid-2.webp',
-  'assets/images/asteroid-3.webp',
-].map(src => {
-  const img = new Image();
-  img.src = src;
-  return img;
-});
-
-// Variable for score tracking
-let highestScore = 0;
-
-// Game variables
-let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
-
-// Constants
-const gravity = 0.6;
-const lift = -5;
-const obstacleWidth = 50;
-const obstacleSpeed = 3;
-
-// Variable to determine if player is holding mouse button
-let isHolding = false;
 
 // Initalize the game
 function initializeGame() {
