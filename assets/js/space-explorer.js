@@ -20,7 +20,6 @@ canvasWrapper.addEventListener('contextmenu', (event) => {
 // Handle window resizing
 window.addEventListener('resize', resizeCanvas);
 
-// Function to resize the canvas
 function resizeCanvas() {
   canvas.width = canvasWrapper.offsetWidth * dpr;
   canvas.height = canvasWrapper.offsetHeight * dpr;
@@ -34,16 +33,11 @@ function resizeCanvas() {
   }
 }
 
-// Variables for score tracking
-let highestScore = 0;
-
-// Game variables
-let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
-
 // Load the start button image
 const startButtonImg = new Image();
 startButtonImg.src = 'assets/images/start-button.webp'
 
+// Draw the start button once the start button image has loaded
 startButtonImg.onload = function () {
   drawStartButton();
 };
@@ -56,3 +50,24 @@ function drawStartButton() {
 
   ctx.drawImage(startButtonImg, centerX, centerY, buttonWidth, buttonHeight);
 }
+
+// Load the spaceship image
+const spaceshipImg = new Image();
+spaceshipImg.src = 'assets/images/ufo.png';
+
+// Load the asteroid images
+const asteroidImages = [
+  'assets/images/asteroid-1.png',
+  'assets/images/asteroid-2.png',
+  'assets/images/asteroid-3.png',
+].map(src => {
+  const img = new Image();
+  img.src = src;
+  return img;
+});
+
+// Variables for score tracking
+let highestScore = 0;
+
+// Game variables
+let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
