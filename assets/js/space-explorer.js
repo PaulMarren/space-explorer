@@ -148,3 +148,13 @@ function updateScoreBar(score) {
   }
   highestScoreElement.textContent = highestScore;
 }
+
+// Increase the difficulty by increasing the number of asteroids every 10 seconds
+function increaseDifficulty() {
+  difficultyIncreaseTimer += 1;
+  if (difficultyIncreaseTimer > 600) { 
+    currentAsteroidCount = currentAsteroidCount * 1.5;
+    currentDifficultyLevel++;
+    difficultyIncreaseTimer = 0;
+  }
+}
