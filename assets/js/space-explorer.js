@@ -138,3 +138,13 @@ canvas.addEventListener('touchstart', () => {
 canvas.addEventListener('touchend', () => {
   isHolding = false; 
 });
+
+// Update the score bar
+function updateScoreBar(score) {
+  const highestScoreElement = document.getElementById('highest-score');
+
+  if (score > highestScore) {
+    highestScore = score;
+  }
+  highestScoreElement.textContent = highestScore;
+}
