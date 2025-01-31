@@ -36,7 +36,7 @@ body {
 
 /* Canvas wrapper styling */
 #canvas-wrapper {
-    flex: 1;
+    flex: 0 0 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,18 +53,33 @@ canvas {
 
 /* Score bar styling */
 .score-bar {
-    flex: 0 0 10%; /* 10% height */
+    flex: 0 0 10%;
+    /* 10% height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .score-bar p {
+}
+
+.score-bar p {
     margin: 5px 0;
     font-size: 18px;
-  }
-  
-  #highest-score {
+}
+
+#highest-score {
     font-weight: bold;
-  }
+}
+
+/*Media queries */
+
+/* Screens up to 768px */
+@media (max-width: 768px) {
+
+    .title-section {
+        flex: 0 0 5%;
+    }
+
+    .score-bar {
+        flex: 0 0 5%;
+    }
+}
