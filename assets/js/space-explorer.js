@@ -158,3 +158,14 @@ function increaseDifficulty() {
     difficultyIncreaseTimer = 0;
   }
 }
+
+// Update the spaceships position based on isHolding boolean
+function updateSpaceshipPosition() {
+  if (isHolding) {
+    spaceship.velocityY = lift;
+  } else {
+    spaceship.velocityY += gravity; 
+  }
+
+  spaceship.y += spaceship.velocityY;
+}
