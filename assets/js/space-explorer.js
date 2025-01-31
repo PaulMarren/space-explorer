@@ -20,3 +20,9 @@ ctx.scale(dpr, dpr);
 
 // Add canvas to canvasWrapper
 canvasWrapper.appendChild(canvas);
+
+// Variables for score tracking
+let highestScore = 0;
+
+// Game variables
+let spaceship, obstacles, isGameStarted, score, currentAsteroidCount, difficultyIncreaseTimer, currentDifficultyLevel;
