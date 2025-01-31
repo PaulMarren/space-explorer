@@ -5,6 +5,11 @@ const canvas = document.createElement('canvas');
 // Create 2d context object
 const ctx = canvas.getContext('2d');
 
+// Disable right-click on the canvas
+canvasWrapper.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
 // Set canvas dimensions
 const dpr = window.devicePixelRatio || 1;
 canvas.width = canvasWrapper.offsetWidth * dpr;
