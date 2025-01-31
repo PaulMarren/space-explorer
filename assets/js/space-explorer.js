@@ -106,7 +106,7 @@ initializeGame();
 canvas.addEventListener('click', () => {
   if (!isGameStarted) {
     isGameStarted = true;
-    //startGame();
+    startGame();
   }
 });
 
@@ -243,4 +243,40 @@ function displayScoreAndDifficulty() {
   ctx.font = '20px Arial';
   ctx.fillText(`Distance: ${Math.floor(score)}`, 10, 30);
   ctx.fillText(`Difficulty: ${Math.floor(currentDifficultyLevel)}`, 10, 60);
+}
+
+// Game loop
+function startGame() {
+
+  if (!isGameStarted) {
+    updateScoreBar(Math.floor(score));
+    initializeGame();
+    return;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Update score based on distance traveled
+  score += obstacleSpeed / 60; 
+
+  // Increment difficulty every 10 seconds 
+  increaseDifficulty();
+
+  // Update spaceships position
+  updateSpaceshipPosition();
+
+  // Draw spaceship
+  drawSpaceship();
+
+  // Update obstacles
+  updateObstacles();
+
+  // Check for collisions
+  checkCollision();
+
+  // Display score and difficulty
+  displayScoreAndDifficulty();
+
+  // Loop the game
+  requestAnimationFrame(startGame);
 }
