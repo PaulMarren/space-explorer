@@ -106,6 +106,14 @@ initializeGame();
 canvas.addEventListener('click', () => {
   if (!isGameStarted) {
     isGameStarted = true;
-    startGame();
+    //startGame();
+  }
+});
+
+// For desktops: Raise the spaceship when the mouse is held down
+canvas.addEventListener('mousedown', () => {
+  if (isGameStarted) {
+    isHolding = true;
+    spaceship.velocityY = lift;
   }
 });
