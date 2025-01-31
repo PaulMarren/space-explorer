@@ -184,5 +184,38 @@ function drawSpaceship() {
     spaceship.width,
     spaceship.height
   );
-  ctx.restore(); // Restore the canvas state
+  ctx.restore(); 
+}
+
+// Update the asteroid obstacles in the canvas
+function updateObstacles() {
+  for (let i = obstacles.length - 1; i >= 0; i--) {
+    const obstacle = obstacles[i];
+    obstacle.x -= obstacleSpeed;
+
+    // Remove obstacles that are off-screen
+    if (obstacle.x + obstacle.width < 0) {
+      obstacles.splice(i, 1);
+    }
+
+    ctx.drawImage(obstacle.img, obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+  }
+
+  if (obstacles.length === 0 || obstacles[obstacles.length - 1].x < canvas.width - 200) {
+    createObstacle();
+  }
+}
+
+// Create obstacle and add to obstacles array
+function createObstacle() {
+  for (let i = 0; i < currentAsteroidCount; i++) {
+    const randomY = Math.random() * (canvas.height - 50); // Random Y position, keeping 50px margin
+    obstacles.push({
+      x: canvas.width + i * 100, // Slight offset for each asteroid 
+      y: randomY, 
+      width: obstacleWidth,
+      height: obstacleWidth, 
+      img: asteroidImages[Math.floor(Math.random() * asteroidImages.length)],
+    });
+  }
 }
