@@ -237,3 +237,10 @@ function checkCollision() {
     isGameStarted = false;
   }
 }
+
+function displayScoreAndDifficulty() {
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText(`Distance: ${Math.floor(score)}`, 10, 30);
+  ctx.fillText(`Difficulty: ${Math.floor(currentDifficultyLevel)}`, 10, 60);
+}
