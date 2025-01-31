@@ -133,3 +133,8 @@ canvas.addEventListener('touchstart', () => {
   isHolding = true;
   spaceship.velocityY = lift; 
 });
+
+// For mobiles: Set isHolding to false on touchend to allow spaceship to drop
+canvas.addEventListener('touchend', () => {
+  isHolding = false; 
+});
