@@ -100,6 +100,14 @@ function drawStartButton() {
   ctx.drawImage(startButtonImg, centerX, centerY, buttonWidth, buttonHeight);
 }
 
+// Draw the players highest score on the canvas
+function drawHighestScore() {
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+
+  ctx.fillText(`Best Score: ${highestScore}`, 10, 50);
+}
+
 // Initalize the game
 function initializeGame() {
   spaceship = {
@@ -118,6 +126,7 @@ function initializeGame() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawTitleImage();
   drawStartButton();
+  drawHighestScore();
 }
 
 initializeGame();
