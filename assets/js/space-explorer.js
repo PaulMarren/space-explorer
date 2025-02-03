@@ -169,7 +169,7 @@ canvas.addEventListener('touchend', () => {
 // Update the highest score
 function updateHighestScore() {
   if (score > highestScore) {
-    highestScore = score;
+    highestScore = Math.floor(score);
   }
 }
 
@@ -294,7 +294,7 @@ function startGame() {
 
   // Update highest score
   updateHighestScore();
-  
+
   // Check for collisions
   checkCollision();
 
