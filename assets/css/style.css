@@ -24,20 +24,6 @@ body {
 
 /********** Content Styling **********/
 
-/* Title styling */
-.title-section {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.title-image {
-    max-height: 80%;
-    user-select: none;
-    pointer-events: none;
-}
 
 /* Canvas wrapper styling */
 #canvas-wrapper {
@@ -54,24 +40,4 @@ canvas {
     height: 100%;
     border: 1px white;
     border-style: solid none;
-}
-
-/* Score bar styling */
-.score-bar {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    min-height: 50px;
-}
-
-.score-bar p {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-#highest-score {
-    font-weight: bold;
 }
