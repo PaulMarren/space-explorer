@@ -72,6 +72,20 @@ function resizeCanvas() {
   }
 }
 
+// Draw the title image once it is loaded
+titleImage.onload = function () {
+  drawTitleImage();
+};
+
+function drawTitleImage() {
+  const titleWidth = 250;
+  const titleHeight = 100;
+  const titleX = (canvas.width / dpr - titleWidth) / 2;
+  const titleY = (canvas.height / dpr - titleHeight) / 10;
+
+  ctx.drawImage(titleImage, titleX, titleY, titleWidth, titleHeight);
+}
+
 // Draw the start button once the start button image has loaded
 startButtonImg.onload = function () {
   drawStartButton();
@@ -102,6 +116,7 @@ function initializeGame() {
   difficultyIncreaseTimer = 0; 
   currentDifficultyLevel = 1;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawTitleImage();
   drawStartButton();
 }
 
