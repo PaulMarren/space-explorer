@@ -105,8 +105,15 @@ function drawHighestScore() {
   ctx.fillStyle = 'white';
   ctx.font = '20px Arial';
 
-  ctx.fillText(`Best Score: ${highestScore}`, 10, 50);
+  const text = `Best Score: ${highestScore}`;
+  const textWidth = ctx.measureText(text).width;
+
+  const x = (canvas.width / dpr - textWidth) / 2;
+  const y = canvas.height / dpr - 20; 
+
+  ctx.fillText(text, x, y);
 }
+
 
 // Initalize the game
 function initializeGame() {
