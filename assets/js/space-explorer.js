@@ -111,7 +111,6 @@ initializeGame();
 canvas.addEventListener('click', () => {
   if (!isGameStarted) {
     isGameStarted = true;
-    startGame();
   }
 });
 
@@ -132,7 +131,6 @@ canvas.addEventListener('mouseup', () => {
 canvas.addEventListener('touchstart', () => {
   if (!isGameStarted) {
     isGameStarted = true;
-    startGame();
     return
   }
   isHolding = true;
@@ -253,14 +251,11 @@ function displayScoreAndDifficulty() {
 // Game loop
 function startGame() {
 
-  if (!isGameStarted) {
-    updateScoreBar(Math.floor(score));
-    initializeGame();
-    return;
-  }
-
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  if (!isGameStarted) {
+    initializeGame();
+  } else {
   // Update score based on distance traveled
   score += obstacleSpeed / 60; 
 
@@ -281,7 +276,10 @@ function startGame() {
 
   // Display score and difficulty
   displayScoreAndDifficulty();
+  }
 
   // Loop the game
   requestAnimationFrame(startGame);
 }
+
+startGame();
