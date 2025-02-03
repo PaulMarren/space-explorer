@@ -166,14 +166,11 @@ canvas.addEventListener('touchend', () => {
   isHolding = false; 
 });
 
-// Update the score bar
-function updateScoreBar(score) {
-  const highestScoreElement = document.getElementById('highest-score');
-
+// Update the highest score
+function updateHighestScore() {
   if (score > highestScore) {
     highestScore = score;
   }
-  highestScoreElement.textContent = highestScore;
 }
 
 // Increase the difficulty by increasing the number of asteroids every 10 seconds
@@ -295,6 +292,9 @@ function startGame() {
   // Update obstacles
   updateObstacles();
 
+  // Update highest score
+  updateHighestScore();
+  
   // Check for collisions
   checkCollision();
 
