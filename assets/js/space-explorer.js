@@ -13,6 +13,11 @@ const obstacleSpeed = 3;
 // Variable to determine if player is holding mouse button
 let isHolding = false;
 
+
+// Load the Space Explorer title image
+const titleImage = new Image();
+titleImage.src = 'assets/images/title-image.webp';
+
 // Load the start button image
 const startButtonImg = new Image();
 startButtonImg.src = 'assets/images/start-button.webp'
