@@ -1,3 +1,4 @@
+
 // Variable for score tracking
 let highestScore = 0;
 
@@ -12,7 +13,6 @@ const obstacleSpeed = 3;
 
 // Variable to determine if player is holding mouse button
 let isHolding = false;
-
 
 // Load the Space Explorer title image
 const titleImage = new Image();
@@ -92,10 +92,10 @@ startButtonImg.onload = function () {
 };
 
 function drawStartButton() {
-  const buttonWidth = 222; 
-  const buttonHeight = 222; 
-  const centerX = (canvas.width / dpr - buttonWidth) / 2; 
-  const centerY = (canvas.height / dpr - buttonHeight) / 2; 
+  const buttonWidth = 222;
+  const buttonHeight = 222;
+  const centerX = (canvas.width / dpr - buttonWidth) / 2;
+  const centerY = (canvas.height / dpr - buttonHeight) / 2;
 
   ctx.drawImage(startButtonImg, centerX, centerY, buttonWidth, buttonHeight);
 }
@@ -109,7 +109,7 @@ function drawHighestScore() {
   const textWidth = ctx.measureText(text).width;
 
   const x = (canvas.width / dpr - textWidth) / 2;
-  const y = canvas.height / dpr - 20; 
+  const y = canvas.height / dpr - 20;
 
   ctx.fillText(text, x, y);
 }
@@ -127,8 +127,8 @@ function initializeGame() {
   obstacles = [];
   isGameStarted = false;
   score = 0;
-  currentAsteroidCount = 1; 
-  difficultyIncreaseTimer = 0; 
+  currentAsteroidCount = 1;
+  difficultyIncreaseTimer = 0;
   currentDifficultyLevel = 1;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawTitleImage();
@@ -155,7 +155,7 @@ canvas.addEventListener('mousedown', () => {
 
 // For desktops: Set isHolding to false on mouse release to allow spaceship to drop
 canvas.addEventListener('mouseup', () => {
-  isHolding = false; 
+  isHolding = false;
 });
 
 // For mobiles: Start game if not started or raise spaceship
@@ -165,12 +165,12 @@ canvas.addEventListener('touchstart', () => {
     return
   }
   isHolding = true;
-  spaceship.velocityY = lift; 
+  spaceship.velocityY = lift;
 });
 
 // For mobiles: Set isHolding to false on touchend to allow spaceship to drop
 canvas.addEventListener('touchend', () => {
-  isHolding = false; 
+  isHolding = false;
 });
 
 // Update the highest score
@@ -183,7 +183,7 @@ function updateHighestScore() {
 // Increase the difficulty by increasing the number of asteroids every 10 seconds
 function increaseDifficulty() {
   difficultyIncreaseTimer += 1;
-  if (difficultyIncreaseTimer > 600) { 
+  if (difficultyIncreaseTimer > 600) {
     currentAsteroidCount = currentAsteroidCount * 1.5;
     currentDifficultyLevel++;
     difficultyIncreaseTimer = 0;
@@ -195,7 +195,7 @@ function updateSpaceshipPosition() {
   if (isHolding) {
     spaceship.velocityY = lift;
   } else {
-    spaceship.velocityY += gravity; 
+    spaceship.velocityY += gravity;
   }
 
   spaceship.y += spaceship.velocityY;
@@ -205,17 +205,17 @@ function drawSpaceship() {
   const tiltAngle = isHolding ? -10 : 0; // Tilt upwards when holding
   const radians = (Math.PI / 180) * tiltAngle; // Convert degrees to radians
 
-  ctx.save(); 
+  ctx.save();
   ctx.translate(spaceship.x + spaceship.width / 2, spaceship.y + spaceship.height / 2); // Move to spaceship center
-  ctx.rotate(radians); 
+  ctx.rotate(radians);
   ctx.drawImage(
     spaceshipImg,
-    -spaceship.width / 2, 
+    -spaceship.width / 2,
     -spaceship.height / 2,
     spaceship.width,
     spaceship.height
   );
-  ctx.restore(); 
+  ctx.restore();
 }
 
 // Update the asteroid obstacles in the canvas
@@ -243,9 +243,9 @@ function createObstacle() {
     const randomY = Math.random() * (canvas.height - 50); // Random Y position, keeping 50px margin
     obstacles.push({
       x: canvas.width + i * 100, // Slight offset for each asteroid 
-      y: randomY, 
+      y: randomY,
       width: obstacleWidth,
-      height: obstacleWidth, 
+      height: obstacleWidth,
       img: asteroidImages[Math.floor(Math.random() * asteroidImages.length)],
     });
   }
@@ -284,29 +284,29 @@ function startGame() {
   if (!isGameStarted) {
     initializeGame();
   } else {
-  // Update score based on distance traveled
-  score += obstacleSpeed / 60; 
+    // Update score based on distance traveled
+    score += obstacleSpeed / 60;
 
-  // Increment difficulty every 10 seconds 
-  increaseDifficulty();
+    // Increment difficulty every 10 seconds 
+    increaseDifficulty();
 
-  // Update spaceships position
-  updateSpaceshipPosition();
+    // Update spaceships position
+    updateSpaceshipPosition();
 
-  // Draw spaceship
-  drawSpaceship();
+    // Draw spaceship
+    drawSpaceship();
 
-  // Update obstacles
-  updateObstacles();
+    // Update obstacles
+    updateObstacles();
 
-  // Update highest score
-  updateHighestScore();
+    // Update highest score
+    updateHighestScore();
 
-  // Check for collisions
-  checkCollision();
+    // Check for collisions
+    checkCollision();
 
-  // Display score and difficulty
-  displayScoreAndDifficulty();
+    // Display score and difficulty
+    displayScoreAndDifficulty();
   }
 
   // Loop the game
