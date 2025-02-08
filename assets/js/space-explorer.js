@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+  // Hide the fallback element
+  document.getElementById('fallback-lcp').style.display = 'none';
+});
 
 // Variable for score tracking
 let highestScore = 0;
