@@ -151,6 +151,7 @@ canvas.addEventListener('click', () => {
 
 // For desktops: Raise the spaceship when the mouse is held down
 canvas.addEventListener('mousedown', () => {
+  console.log("Mousedown");
   if (isGameStarted) {
     isHolding = true;
     spaceship.velocityY = lift;
@@ -159,21 +160,24 @@ canvas.addEventListener('mousedown', () => {
 
 // For desktops: Set isHolding to false on mouse release to allow spaceship to drop
 canvas.addEventListener('mouseup', () => {
+  console.log("Mouseup");
   isHolding = false;
 });
 
 // For mobiles: Start game if not started or raise spaceship
 canvas.addEventListener('touchstart', () => {
+  console.log("Touchstart");
   if (!isGameStarted) {
     isGameStarted = true;
-    return
+  } else {
+    isHolding = true;
+    spaceship.velocityY = lift;
   }
-  isHolding = true;
-  spaceship.velocityY = lift;
 });
 
 // For mobiles: Set isHolding to false on touchend to allow spaceship to drop
 canvas.addEventListener('touchend', () => {
+  console.log("Touchend");
   isHolding = false;
 });
 
