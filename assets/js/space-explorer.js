@@ -142,44 +142,28 @@ function initializeGame() {
 
 initializeGame();
 
-// Start the game when the canvas is clicked if game is not started
-canvas.addEventListener('click', () => {
-  if (!isGameStarted) {
-    isGameStarted = true;
-  }
-});
-
-// For desktops: Raise the spaceship when the mouse is held down
-canvas.addEventListener('mousedown', () => {
-  console.log("Mousedown");
-  if (isGameStarted) {
-    isHolding = true;
-    spaceship.velocityY = lift;
-  }
-});
-
-// For desktops: Set isHolding to false on mouse release to allow spaceship to drop
-canvas.addEventListener('mouseup', () => {
-  console.log("Mouseup");
-  isHolding = false;
-});
-
-// For mobiles: Start game if not started or raise spaceship
-canvas.addEventListener('touchstart', () => {
-  console.log("Touchstart");
+// Function to be called on mousedown/touchstart event
+function handleInputStart(event) {
+  event.preventDefault(); 
   if (!isGameStarted) {
     isGameStarted = true;
   } else {
     isHolding = true;
     spaceship.velocityY = lift;
   }
-});
+}
 
-// For mobiles: Set isHolding to false on touchend to allow spaceship to drop
-canvas.addEventListener('touchend', () => {
-  console.log("Touchend");
+// Function to be called on mouseup/touchend event
+function handleInputEnd(event) {
+  event.preventDefault(); 
   isHolding = false;
-});
+}
+
+// Add event listeners for both desktop and mobile
+canvas.addEventListener('mousedown', handleInputStart);
+canvas.addEventListener('touchstart', handleInputStart);
+canvas.addEventListener('mouseup', handleInputEnd);
+canvas.addEventListener('touchend', handleInputEnd);
 
 // Update the highest score
 function updateHighestScore() {
