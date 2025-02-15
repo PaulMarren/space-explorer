@@ -12,6 +12,7 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
     - [User stories](#user-stories)
     - [Design](#design)
     - [Wireframes](#wireframes)
+  - [Technologies](#technologies)  
 
 ## UX
 
@@ -48,9 +49,9 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
 
 ### Design
 1. **Visual Design**
-   - Title Image and Start Button: The game features a visually appealing title image and a start button centered on the screen. These elements are designed to be intuitive and welcoming for new players.
-   - Spaceship and Asteroids: The spaceship and asteroid images are simple yet visually distinct, making it easy for players to differentiate between them during gameplay.
-   - Score and Difficulty Display: The score and difficulty level are displayed in a clean, readable font at the top of the screen, ensuring players can quickly access this information.
+   - **Title Image and Start Button**: The game features a visually appealing title image and a start button centered on the screen. These elements are designed to be intuitive and welcoming for new players.
+   - **Spaceship and Asteroids**: The spaceship and asteroid images are simple yet visually distinct, making it easy for players to differentiate between them during gameplay.
+   - **Score and Difficulty Display**: The score and difficulty level are displayed in a clean, readable font at the top of the screen, ensuring players can quickly access this information.
 
 2. **Game Mechanics**
    - **Spaceship Control**: The spaceship is controlled by holding the mouse button (or tapping on mobile) to lift it and releasing to let it fall. This mechanic is easy to understand and provides a satisfying sense of control.
@@ -67,5 +68,23 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
    - The game provides immediate feedback when the player loses, resetting the game quickly so players can try again. The highest score is displayed to encourage players to beat their previous record.
 
 ### Wireframes
-* [View Desktop Wireframe]()
-* [View Mobile Wireframe]()
+**Desktop**
+<br>
+![Desktop wireframe](assets/docs/images/desktop-start-screen.png)
+
+**Mobile**
+<br>
+![Mobile wireframe](assets/docs/images/mobile-start-screen.png)
+
+## Technologies
+### Languages used
+  - HTML5
+  - CSS3
+  - JavaScript
+### Frameworks, Libraries & Programs Used
+   1. Git
+      - Git was used for version control by utilizing the Visual Studio Code terminal to commit to Git and Push to GitHub.
+   2. GitHub
+      - GitHub is used to store the projects code after being pushed from Git and to deploy the website.
+   3. Visual Studio Code
+      - Visual Studio Code was used as the IDE.
