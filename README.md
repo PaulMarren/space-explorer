@@ -13,6 +13,7 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
     - [Design](#design)
     - [Wireframes](#wireframes)
   - [Technologies](#technologies)  
+  - [Manual Testing](#manual-testing)
 
 ## UX
 
@@ -88,3 +89,169 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
       - GitHub is used to store the projects code after being pushed from Git and to deploy the website.
    3. Visual Studio Code
       - Visual Studio Code was used as the IDE.
+
+## Manual Testing
+### Starting the game
+
+**Testing Method**
+
+- Desktop: Click the start button image using a mouse.
+
+- Mobile: Tap the start button image using a touchscreen device.
+
+**Expected Result**
+
+- The game should start immediately after clicking or tapping the start button.
+
+- The spaceship should appear on the screen, and asteroids should begin to generate and move across the canvas.
+
+- The score and difficulty level should be displayed in the top-left corner.
+
+**Actual Result**
+
+- The game started as expected on both desktop and mobile devices.
+
+- The spaceship appeared, and asteroids began to generate and move.
+
+- The score and difficulty level were displayed correctly.
+
+### Spaceship Controls
+**Testing Method**
+
+- Desktop: Hold down the mouse button to lift the spaceship and release it to let it fall.
+
+- Mobile: Tap and hold the screen to lift the spaceship and release to let it fall.
+
+**Expected Result**
+
+- The spaceship should move upward when the mouse button is held down (or the screen is tapped and held on mobile).
+
+- The spaceship should tilt upward slightly while lifting.
+
+- The spaceship should fall when the mouse button is released (or the tap ends on mobile).
+
+**Actual Result**
+
+- The spaceship moved upward and tilted as expected when the mouse button was held down or the screen was tapped.
+
+- The spaceship fell when the mouse button was released or the tap ended.
+
+### Obstacle Generation
+**Testing Method**
+
+- Play the game for several minutes and observe the asteroid generation.
+
+**Expected Result**
+
+- Asteroids should generate dynamically and move across the screen from right to left.
+
+- The number of asteroids should increase every 10 seconds as the difficulty level increases.
+
+**Actual Result**
+
+- Asteroids generated dynamically and moved across the screen as expected.
+
+- The number of asteroids increased every 10 seconds, and the difficulty level was displayed correctly.
+
+### Collision Detection
+**Testing Method**
+
+- Intentionally collide the spaceship with an asteroid.
+
+- Intentionally collide the spaceship with the top or bottom of the canvas.
+
+**Expected Result**
+
+- The game should end immediately upon collision.
+
+- The game should reset, displaying the start button and title image.
+
+**Actual Result**
+
+- The game ended immediately upon collision with an asteroid or the canvas boundaries.
+
+- The game reset correctly, displaying the start button and title image.
+
+### Score and Difficulty Tracking
+**Testing Method**
+
+- Play the game and observe the score and difficulty level.
+
+**Expected Result**
+
+- The score should increase as the spaceship travels further.
+
+- The difficulty level should increase every 10 seconds.
+
+**Actual Result**
+
+- The score increased as expected, and the difficulty level increased every 10 seconds.
+
+### Highest Score Tracking
+**Testing Method**
+
+- Play the game multiple times, achieving different scores.
+
+**Expected Result**
+
+- The highest score should be updated and displayed correctly after each game.
+
+**Actual Result**
+
+- The highest score was updated and displayed correctly after each game.
+
+### Responsiveness
+**Known Issue: Page Refresh Required in Chrome DevTools**
+
+When testing the game’s responsiveness using Chrome DevTools, the canvas may not resize dynamically unless the page is refreshed. This occurs because the resize event is not always triggered correctly in Responsive Design Mode, even though the event listener is properly implemented in the code.
+
+**Steps to Test Responsiveness**
+1. Open the game in Chrome and launch DevTools (F12).
+
+2. Switch to the Responsive Design Mode.
+
+3. Select a device or manually adjust the screen size.
+
+4. Refresh the page after changing the screen size to ensure the canvas resizes correctly.
+
+**Verify that**
+
+- The canvas fits the new screen size.
+
+- All game elements (spaceship, asteroids, score, etc.) are visible and functional.
+
+- The game remains playable on the new screen size.
+
+**Expected Result**
+- After refreshing the page, the canvas should resize to fit the new screen size.
+
+- All game elements should adjust accordingly, and the game should remain fully functional.
+
+**Actual Result**
+- The canvas resized correctly after refreshing the page.
+
+- All game elements adjusted as expected, and the game remained playable on all tested screen sizes.
+
+**Workaround**
+
+To ensure the canvas resizes correctly during testing:
+
+- Manually refresh the page after changing the screen size in Chrome DevTools.
+
+- Alternatively, test responsiveness on actual devices.
+
+### Game Reset
+**Testing Method**
+
+- Collide the spaceship with an asteroid or the canvas boundaries to end the game.
+
+**Expected Result**
+
+- The game should reset immediately, displaying the start button and title image.
+
+**Actual Result**
+
+- The game reset as expected, allowing players to start a new game immediately.
+
+### Summary of Manual Testing
+All test cases were executed successfully, and the game behaved as expected. No major issues were found during manual testing.
