@@ -24,7 +24,7 @@ titleImage.src = 'assets/images/title-image.webp';
 
 // Load the start button image
 const startButtonImg = new Image();
-startButtonImg.src = 'assets/images/start-button.webp'
+startButtonImg.src = 'assets/images/start-button.webp';
 
 // Load the spaceship image
 const spaceshipImg = new Image();

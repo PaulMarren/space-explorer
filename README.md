@@ -7,13 +7,25 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
 
 # Table of Contents
 - [Space Explorer](#space-explorer)
-- [Table of Contents](#table-of-contents)
-  - [UX](#ux)
-    - [User stories](#user-stories)
-    - [Design](#design)
-    - [Wireframes](#wireframes)
-  - [Technologies](#technologies)  
-  - [Manual Testing](#manual-testing)
+- [UX](#ux)
+   - [User stories](#user-stories)
+   - [Design](#design)
+   - [Wireframes](#wireframes)
+- [Technologies](#technologies)  
+- [Manual Testing](#manual-testing)
+   - [Starting the game](#starting-the-game)
+   - [Spaceship controls](#spaceship-controls)
+   - [Obstacle generation](#obstacle-generation)
+   - [Collision detection](#collision-detection)
+   - [Score and difficulty tracking](#score-and-difficulty-tracking)
+   - [Highest score tracking](#highest-score-tracking)
+   - [Responsiveness](#responsiveness)
+   - [Game reset](#game-reset)
+   - [Manual testing summary](#summary-of-manual-testing)
+ - [Validator Testing](#validator-testing)
+   - [HTML validator](#html-validator)
+   - [CSS validator](#css-validator)
+   - [JavaScript validator](#javaScript-validator)
 
 ## UX
 
@@ -255,3 +267,31 @@ To ensure the canvas resizes correctly during testing:
 
 ### Summary of Manual Testing
 All test cases were executed successfully, and the game behaved as expected. No major issues were found during manual testing.
+
+## Validator Testing
+### HTML Validator
+The W3C Markup Validator was used to validate index html page and ensure there was no errors.
+![HTML validator results](assets/docs/validator-testing/index-page-html-validator-results.jpg)
+
+### CSS Validator
+The W3C CSS Validator Service was used to validate the CSS stylesheet and ensure there was no errors.
+![CSS validator results](assets/docs/validator-testing/css-validator-results.jpg)
+
+### JavaScript Validator
+The JavaScript Validator (https://jshint.com/) was used to check the scripts.js file for any errors.
+![JavaScript validator results](assets/docs/validator-testing/javascript-validator-results.jpg)
+
+## Bugs
+### Unfixed bugs
+**Page Refresh Required in Chrome DevTools**
+
+When testing the game’s responsiveness using Chrome DevTools, the canvas may not resize dynamically unless the page is refreshed. This occurs because the resize event is not always triggered correctly in Responsive Design Mode, even though the event listener is properly implemented in the code.
+
+### Fixed bugs
+
+**Touchstart and Mousedown event being triggered simultaneously in Chrome DevTools**
+
+When testing the game’s while at smaller screen sizes using Chrome DevTools, the Mousedown event and Touchstart event was being triggered simultaneously when clicking the canvas causing the spaceship to lift twice. 
+
+I solved this by creating a single method to handle the when the canvas is clicked on via mousedown or touchstart. The method uses prevents the default behaviour of the event and ensures only one event is processed at a time.
+
