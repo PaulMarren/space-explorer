@@ -26,6 +26,15 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
    - [HTML validator](#html-validator)
    - [CSS validator](#css-validator)
    - [JavaScript validator](#javaScript-validator)
+ - [Lighthouse Testing](#lighthouse-testing)  
+   - [Desktop lighthouse results](#desktop-lighthouse-results)
+   - [Mobile lighthouse results](#mobile-lighthouse-results)
+ - [Bugs](#bugs) 
+   - [Unfixed bugs](#unfixed-bugs)
+   - [Fixed bugs](#fixed-bugs)
+ - [Deployment](#deployment)
+   - [Github pages](#github-pages)
+ - [Credits](#credits)  
 
 ## UX
 
@@ -281,6 +290,15 @@ The W3C CSS Validator Service was used to validate the CSS stylesheet and ensure
 The JavaScript Validator (https://jshint.com/) was used to check the scripts.js file for any errors.
 ![JavaScript validator results](assets/docs/validator-testing/javascript-validator-results.jpg)
 
+## Lighthouse Testing
+Lighthouse testing was used to determine the site's performance, accessibility, best practices and SEO. Special emphasis was layed on performance and accessibility to provide a great user experience for every visitor, no matter the device or conditions.
+
+### Desktop lighthouse results
+![Desktop lighthouse results](assets/docs/lighthouse-testing/lighthouse-results-desktop.jpg)
+
+### Mobile lighthouse results
+![Mobile lighthouse results](assets/docs/lighthouse-testing/lighthouse-results-mobile.jpg)
+
 ## Bugs
 ### Unfixed bugs
 **Page Refresh Required in Chrome DevTools**
@@ -295,3 +313,66 @@ When testing the game’s while at smaller screen sizes using Chrome DevTools, t
 
 I solved this by creating a single method to handle the when the canvas is clicked on via mousedown or touchstart. The method uses prevents the default behaviour of the event and ensures only one event is processed at a time.
 
+**Unable to get a lighthouse reading**
+
+When trying to test my website using lighthouse testing i was unable to get a result because my website had no elements as everything is displayed in a canvas. 
+
+I solved this by adding a fallback element of the title image which is then hidden when the canvas is loaded.
+
+## Used platforms and devices
+### Browsers
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox
+
+### Smartphones
+- Oppo Reno 4z 5G
+
+## Deployment
+### Github pages
+The project was deployed to GitHub Pages using the following steps...
+
+1. **Log in to GitHub and locate the GitHub Repository.**  
+   ![GitHub repository image](assets/docs/github-deployment/repository-image.jpg)
+
+2. **At the top of the Repository, locate the "Settings" Button on the menu.**  
+   ![GitHub Settings button image](assets/docs/github-deployment/settings-button.jpg)
+
+3. **Scroll down the Settings page until you locate the "GitHub Pages" Section.**  
+   ![GitHub pages button image](assets/docs/github-deployment/pages-button.jpg)
+
+4. **Under "Source", click the dropdown called "None" and select "main".**  
+   ![GitHub branch dropdown image](assets/docs/github-deployment/branch-image.jpg)
+
+5. **Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.**  
+   ![GitHub branch dropdown image](assets/docs/github-deployment/deployments-image.jpg)
+
+## Credits
+### [Polotno Studio](https://studio.polotno.com/)
+* Used to create title image and start button icon.
+
+### [Techsini](https://techsini.com/multi-mockup/index.php)
+* Used to create the mockup in the readme file.
+
+### [HTML validator](https://validator.w3.org/)
+* Used to verify HTML code.
+
+### [CSS validator](https://jigsaw.w3.org/css-validator/)
+* Used to verify CSS code.
+
+### [JavaScript validator](https://jshint.com/)
+* Used to verify JavaScript code.
+
+### [Image Resizer](https://imageresizer.com/)
+* Used to resize images.
+
+### [Favicon Generator](https://favicon.io/)
+* Used to create favicons.
+
+
+### [Images]
+* [Spaceship image](https://pixabay.com/vectors/aliens-spaceship-rocket-ship-moon-36912/)
+* [Asteroid 1 image](https://pixabay.com/vectors/asteroid-blast-cosmos-astronomy-8464820/)
+* [Asteroid 2 image](https://pixabay.com/illustrations/planetarium-comet-falling-star-5636947/)
+* [Asteroid 3 image](https://pixabay.com/vectors/eris-planet-terrestrial-satellite-8236210/)
+* [Background image](https://creazilla.com/media/vector/7869965/shooting-star)
