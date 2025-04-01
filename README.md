@@ -11,7 +11,8 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
    - [User stories](#user-stories)
    - [Design](#design)
    - [Wireframes](#wireframes)
-- [Technologies](#technologies)  
+- [Technologies](#technologies)
+- [Testing Principles](#testing-principles)  
 - [Manual Testing](#manual-testing)
    - [Starting the game](#starting-the-game)
    - [Spaceship controls](#spaceship-controls)
@@ -110,6 +111,37 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
       - GitHub is used to store the projects code after being pushed from Git and to deploy the website.
    3. Visual Studio Code
       - Visual Studio Code was used as the IDE.
+
+## Testing Principles
+For Space Explorer, I used manual testing as the primary approach due to the project's scope and time constraints.
+
+### Manual Testing
+Manual testing was ideal for:
+
+- Validating game mechanics (e.g., collision detection, scoring).
+
+- Testing user interactions (mouse/touch controls).
+
+- Identifying visual/UX issues (e.g., canvas rendering, responsive design).
+
+It allowed for ad-hoc exploration of edge cases (e.g., rapid clicks, screen resizing).
+
+**Deployment methods**
+
+- Playtesting by myself to catch bugs and ensure game works as expected.
+
+- Cross-device testing (mobile/desktop) to ensure responsiveness.
+
+### Automated Testing
+While automated testing (e.g., Jest) would be valuable for continuous testing as i developed my project it was not feasible here due to:
+
+- Time constraints in setting up test suites for a small-scale game.
+
+- The heavy reliance on canvas rendering and real-time interactions, which are harder to automate effectively.
+
+**Future Considerations**
+
+In a production environment, I’d integrate tests for core logic (e.g., score calculations).
 
 ## Manual Testing
 ### Starting the game
