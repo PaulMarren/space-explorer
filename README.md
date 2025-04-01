@@ -6,13 +6,13 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
 ![Mockup image of Space Explorer](assets/docs/images/mockup-image.jpg)
 
 # Table of Contents
-- [**USER EXPERIENCE**](#user-experience)
-- [**TECHNOLOGIES**](#technologies)
-- [**TESTING**](#testing)
-- [**BUGS**](#bugs) 
-- [**USED PLATFORMS AND DEVICES**](#bugs) 
-- [**DEPLOYMENT**](#deployment)
-- [**CREDITS**](#credits)  
+- [**USER EXPERIENCE**](#-user-experience)
+- [**TECHNOLOGIES**](#-technologies)
+- [**TESTING**](#-testing)
+- [**BUGS**](#-bugs) 
+- [**USED PLATFORMS AND DEVICES**](#-used-platforms-and-devices) 
+- [**DEPLOYMENT**](#-deployment)
+- [**CREDITS**](#-credits)  
 
 
 ## 🎨 User Experience  
