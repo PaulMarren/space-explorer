@@ -7,7 +7,7 @@ The live page can be viewed here: [Link to Space Explorer](https://paulmarren.gi
 
 # Table of Contents
 - [**USER EXPERIENCE**](#-user-experience)
-- [**TECHNOLOGIES**](#-technologies)
+- [**TECHNOLOGIES**](#️-technologies)
 - [**TESTING**](#-testing)
 - [**BUGS**](#-bugs) 
 - [**USED PLATFORMS AND DEVICES**](#-used-platforms-and-devices) 
